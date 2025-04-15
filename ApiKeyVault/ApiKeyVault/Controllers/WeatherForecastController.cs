@@ -35,10 +35,10 @@ namespace ApiKeyVault.Controllers
         [HttpGet("keyvault")]
         public IActionResult GetSecret()
         {
-            string keyVaultUrl = "https://kvdemo87877.vault.azure.net/";
+            string keyVaultUrl = "https://bhavikakeyvault.vault.azure.net/";
             var client = new SecretClient(new Uri(keyVaultUrl), 
                 new DefaultAzureCredential());
-            KeyVaultSecret secret = client.GetSecret("ApiKey");
+            KeyVaultSecret secret = client.GetSecret("bhavika");
             string secretValue = secret.Value;
             return Ok(secretValue);
         }
